@@ -6,6 +6,7 @@ use App\Filament\Resources\ResidentResource\Pages;
 use App\Filament\Resources\ResidentResource\RelationManagers;
 use App\Models\Resident;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -24,6 +25,7 @@ class ResidentResource extends Resource
         return $form
             ->schema([
                 //
+                TextInput::make('date_of_admission')->required(),
             ]);
     }
 
