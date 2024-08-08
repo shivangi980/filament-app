@@ -102,8 +102,6 @@ class ResidentResource extends Resource
                                     ->label('Home Phone')
                                     ->extraAttributes(['data-mask' => '(999) 999-9999'])
                                     ->required(),
-                                    // Include your custom Blade view with the script
-                                    Forms\Components\View::make('components.input-mask'),
                                     TextInput::make('primary_mobile')
                                     ->label('Mobile')
                                     ->extraAttributes(['data-mask' => '(999) 999-9999'])
@@ -342,7 +340,10 @@ class ResidentResource extends Resource
                         ->label('Notes')
                         ->required(),
                     ]),
-            ]);
+                    
+                    // Include your custom Blade view with the script
+                    Forms\Components\View::make('components.input-mask'),
+                ]);
     }
 
     public static function table(Table $table): Table
