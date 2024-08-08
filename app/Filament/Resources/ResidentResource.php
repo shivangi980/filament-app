@@ -162,10 +162,8 @@ class ResidentResource extends Resource
                             'Spouse' => 'Spouse',
                             'Other' => 'Other',
                         ])
-                        ->required(),
-                        Forms\Components\View::make( new HtmlString("<small>Please note if the Resident is insured on thier own policy or another person's"))
-                        ->extraSmall()
-                        ->label(''),
+                        ->required()
+                        ->helperText('Please note if the Resident is insured on their own policy or another person\'s.'),
                         TextInput::make('drug_plan1')
                         ->label('Drug Plan Name')
                         ->required(),
@@ -256,9 +254,8 @@ class ResidentResource extends Resource
                         ->required(),
                         Checkbox::make('clear_health_alliance')
                         ->label('Clear Health Alliance')
-                        ->required(),
-                        Forms\Components\View::make(new HtmlString("<small>Mediciade program for HIC+ patients</small>"))
-                        ->extraSmall(),
+                        ->required()
+                        ->helperText('Mediciade program for HIC+ patients'),
                         Select::make('long_care_provider')
                         ->label('Long Term Care Provider')
                         ->options([
