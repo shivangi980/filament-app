@@ -124,6 +124,7 @@ class ResidentResource extends Resource
                                     ->required(),
                                     TextInput::make('secondary_phone')
                                     ->label('Home Phone')
+                                    ->extraAttributes(['data-mask' => '(999) 999-9999'])
                                     ->required(),
                                     TextInput::make('secondary_mobile')
                                     ->label('Mobile')
@@ -197,6 +198,7 @@ class ResidentResource extends Resource
                         ->required(),
                         TextInput::make('dialysis_center_phone')
                         ->label('Dialysis Center Phone #')
+                        ->extraAttributes(['data-mask' => '(999) 999-9999'])
                         ->required(),
                         Radio::make('under_hospice_care')
                         ->label('Is under hospice care?')
@@ -208,6 +210,7 @@ class ResidentResource extends Resource
                         TextInput::make('hospice_Provider')->required(),
                         TextInput::make('hospice_provider_phone')
                         ->label('Hospice Provider Phone #')
+                        ->extraAttributes(['data-mask' => '(999) 999-9999'])
                         ->required(),
                         Textarea::make('allergies')->required(),
                         Textarea::make('medical_notes')
@@ -221,6 +224,7 @@ class ResidentResource extends Resource
                         ->required(),
                         TextInput::make('medical_physician_phone')
                         ->label('Phone')
+                        ->extraAttributes(['data-mask' => '(999) 999-9999'])
                         ->required(),
                         TextInput::make('medical_physician_address')
                         ->label('Address')
@@ -236,6 +240,7 @@ class ResidentResource extends Resource
                         ->required(),
                         TextInput::make('psychiatric_physician_phone')
                         ->label('Phone')
+                        ->extraAttributes(['data-mask' => '(999) 999-9999'])
                         ->required(),
                         TextInput::make('psychiatric_physician_address')
                         ->label('Address')
@@ -284,6 +289,7 @@ class ResidentResource extends Resource
                         ->required(),
                         TextInput::make('case_worker_phone')
                         ->label('Case Worker Phone #')
+                        ->extraAttributes(['data-mask' => '(999) 999-9999'])
                         ->required(),
                         Checkbox::make('assistive_care_service')
                         ->label('Assistive Care Services?')
