@@ -25,7 +25,7 @@ class ResidentResource extends Resource
         return $form
             ->schema([
                 //
-                TextInput::make('date_of_admission')->required(),
+                Forms\Components\TextInput::make('date_of_admission')->required(),
             ]);
     }
 
