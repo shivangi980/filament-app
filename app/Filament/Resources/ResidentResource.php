@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -30,7 +31,7 @@ class ResidentResource extends Resource
         return $form
             ->schema([
                 //
-                Card::make()
+                Section::make()
                 ->schema ([
                 DatePicker::make('date_of_admission')->required(),
                 TextInput::make('first_name')->required(),
