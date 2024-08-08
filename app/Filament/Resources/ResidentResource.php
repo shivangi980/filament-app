@@ -52,7 +52,8 @@ class ResidentResource extends Resource
                         FileUpload::make('picture')
                         ->label('Picture Upload')
                         ->image()
-                        ->required(),
+                        ->required()
+                        ->disk('public'),
                         DatePicker::make('dob')
                         ->label('Date of Birth')
                         ->required(),
