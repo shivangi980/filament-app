@@ -20,6 +20,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -364,7 +365,13 @@ class ResidentResource extends Resource
                 TextColumn::make('date_of_admission'),
                 TextColumn::make('first_name'),
                 TextColumn::make('last_name'),
-                TextColumn::make('picture'),
+                // Update this to use ImageColumn
+                ImageColumn::make('picture')
+                    ->label('Picture')
+                    ->disk('public') // Ensure the correct disk
+                    ->directory('pictures') // Specify the directory if needed
+                    ->size(150) // Adjust size as needed
+                    ->alt('Profile Picture'), // Alt text for the image
                 TextColumn::make('dob'),
                 TextColumn::make('social_security'),
                 TextColumn::make('gender'),

@@ -85,4 +85,9 @@ class resident extends Model
         'sent_to',
         'bed_notes',
     ];
+
+    public function getPictureUrlAttribute()
+    {
+        return $this->picture ? Storage::url($this->picture) : null;
+    }
 }
