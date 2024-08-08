@@ -106,6 +106,7 @@ class ResidentResource extends Resource
                                     TextInput::make('primary_mobile')
                                     ->label('Mobile')
                                     ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                                    ->placeholder('(___) ___-____')
                                     ->required(),
                                     TextInput::make('primary_mail')
                                     ->label('Email')
@@ -394,7 +395,7 @@ class ResidentResource extends Resource
                 TextInput::make('drug_plan1'),
                 TextInput::make('drug_plan2'),
                 TextInput::make('completed_1823_file'),
-                DatePicker::make('completed_1823_date'),
+                TextInput::make('completed_1823_date'),
                 TextInput::make('dnr_file'),
                 TextInput::make('dialysis_patient'),
                 TextInput::make('dialysis_center'),
@@ -427,14 +428,14 @@ class ResidentResource extends Resource
                 TextInput::make('mma'),
                 TextInput::make('financial_notes'),
                 TextInput::make('admitted_form'),
-                DatePicker::make('date_of_discharge'),
+                TextInput::make('date_of_discharge'),
                 TextInput::make('discharged_to'),
                 TextInput::make('discharge_reason'),
                 TextInput::make('discharge_notes'),
-                DatePicker::make('date_out'),
-                DatePicker::make('date_in'),
+                TextInput::make('date_out'),
+                TextInput::make('date_in'),
                 TextInput::make('sent_to'),
-                Textarea::make('bed_notes'),
+                TextInput::make('bed_notes'),
             ])
             ->filters([
                 //
