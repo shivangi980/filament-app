@@ -9,11 +9,11 @@ use Filament\Forms;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Columns;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -63,7 +63,8 @@ class ResidentResource extends Resource
                     ]),
                 Section::make('EMERGENCY CONTACTS')
                     ->schema([
-                        Columns::make([
+                        Grid::make(2)
+                        ->schema([
                             Section::make('Primary Contact')
                                 ->schema([
                                     TextInput::make('primary_name')->required(),
