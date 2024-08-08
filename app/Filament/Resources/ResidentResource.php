@@ -101,6 +101,7 @@ class ResidentResource extends Resource
                                     TextInput::make('primary_phone')
                                     ->label('Home Phone')
                                     ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                                    ->placeholder('(___) ___-____')
                                     ->required(),
                                     TextInput::make('primary_mobile')
                                     ->label('Mobile')
@@ -124,10 +125,12 @@ class ResidentResource extends Resource
                                     TextInput::make('secondary_phone')
                                     ->label('Home Phone')
                                     ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                                    ->placeholder('(___) ___-____')
                                     ->required(),
                                     TextInput::make('secondary_mobile')
                                     ->label('Mobile')
                                     ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                                    ->placeholder('(___) ___-____')
                                     ->required(),
                                     TextInput::make('secondary_mail')
                                     ->label('Email')
@@ -199,6 +202,7 @@ class ResidentResource extends Resource
                         TextInput::make('dialysis_center_phone')
                         ->label('Dialysis Center Phone #')
                         ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                        ->placeholder('(___) ___-____')
                         ->required(),
                         Radio::make('under_hospice_care')
                         ->label('Is under hospice care?')
@@ -211,6 +215,7 @@ class ResidentResource extends Resource
                         TextInput::make('hospice_provider_phone')
                         ->label('Hospice Provider Phone #')
                         ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                        ->placeholder('(___) ___-____')
                         ->required(),
                         Textarea::make('allergies')->required(),
                         Textarea::make('medical_notes')
@@ -225,6 +230,7 @@ class ResidentResource extends Resource
                         TextInput::make('medical_physician_phone')
                         ->label('Phone')
                         ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                        ->placeholder('(___) ___-____')
                         ->required(),
                         TextInput::make('medical_physician_address')
                         ->label('Address')
@@ -241,6 +247,7 @@ class ResidentResource extends Resource
                         TextInput::make('psychiatric_physician_phone')
                         ->label('Phone')
                         ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                        ->placeholder('(___) ___-____')
                         ->required(),
                         TextInput::make('psychiatric_physician_address')
                         ->label('Address')
@@ -290,6 +297,7 @@ class ResidentResource extends Resource
                         TextInput::make('case_worker_phone')
                         ->label('Case Worker Phone #')
                         ->extraAttributes(['data-mask' => '(999) 999-9999'])
+                        ->placeholder('(___) ___-____')
                         ->required(),
                         Checkbox::make('assistive_care_service')
                         ->label('Assistive Care Services?')
