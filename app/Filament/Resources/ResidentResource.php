@@ -59,6 +59,7 @@ class ResidentResource extends Resource
                         ->required(),
                         TextInput::make('social_security')
                         ->label('Social Security Number')
+                        ->extraAttributes(['data-mask' => '999-99-9999'])
                         ->required(),
                         Select::make('gender')
                         ->options([
