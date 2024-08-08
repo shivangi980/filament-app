@@ -369,8 +369,7 @@ class ResidentResource extends Resource
                 ImageColumn::make('picture')
                     ->label('Picture')
                     ->disk('public') // Ensure the correct disk
-                    ->size(150) // Adjust size as needed
-                    ->alt('Profile Picture'), // Alt text for the image
+                    ->size(150),
                 TextColumn::make('dob'),
                 TextColumn::make('social_security'),
                 TextColumn::make('gender'),
