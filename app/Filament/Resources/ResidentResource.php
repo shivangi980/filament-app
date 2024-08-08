@@ -106,6 +106,7 @@ class ResidentResource extends Resource
                                     Forms\Components\View::make('components.input-mask'),
                                     TextInput::make('primary_mobile')
                                     ->label('Mobile')
+                                    ->extraAttributes(['data-mask' => '(999) 999-9999'])
                                     ->required(),
                                     TextInput::make('primary_mail')
                                     ->label('Email')
@@ -128,6 +129,7 @@ class ResidentResource extends Resource
                                     ->required(),
                                     TextInput::make('secondary_mobile')
                                     ->label('Mobile')
+                                    ->extraAttributes(['data-mask' => '(999) 999-9999'])
                                     ->required(),
                                     TextInput::make('secondary_mail')
                                     ->label('Email')
