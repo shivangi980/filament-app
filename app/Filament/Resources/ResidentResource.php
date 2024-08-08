@@ -6,6 +6,7 @@ use App\Filament\Resources\ResidentResource\Pages;
 use App\Filament\Resources\ResidentResource\RelationManagers;
 use App\Models\resident;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -29,6 +30,8 @@ class ResidentResource extends Resource
         return $form
             ->schema([
                 //
+                Card::make()
+                ->schema ([
                 DatePicker::make('date_of_admission')->required(),
                 TextInput::make('first_name')->required(),
                 TextInput::make('last_name')->required(),
@@ -55,6 +58,8 @@ class ResidentResource extends Resource
                 ->required(),
                 TextInput::make('religion')->required(),
                 Textarea::make('notes')->required(),
+            ])
+            ->label("ADD RESIDENT"),
                 TextInput::make('primary_name')->required(),
                 TextInput::make('primary_relationship')->required(),
                 TextInput::make('primary_phone')->required(),
@@ -123,7 +128,83 @@ class ResidentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                // 
+                TextInput::make('date_of_admission'),
+                TextInput::make('first_name'),
+                TextInput::make('last_name'),
+                FileUpload::make('picture')
+                ->image()
+                ->required(),
+                TextInput::make('dob'),
+                TextInput::make('social_security'),
+                TextInput::make('gender'),
+                TextInput::make('room_number'),
+                TextInput::make('bed'),
+                TextInput::make('race'),
+                TextInput::make('marital_status'),
+                TextInput::make('religion'),
+                Textarea::make('notes'),
+                TextInput::make('primary_name'),
+                TextInput::make('primary_relationship'),
+                TextInput::make('primary_phone'),
+                TextInput::make('primary_mobile'),
+                TextInput::make('primary_mail'),
+                TextInput::make('primary_address'),
+                TextInput::make('secondary_name'),
+                TextInput::make('secondary_relationship'),
+                TextInput::make('secondary_phone'),
+                TextInput::make('secondary_mobile'),
+                TextInput::make('secondary_mail'),
+                TextInput::make('secondary_address'),
+                TextInput::make('insurance1'),
+                TextInput::make('insurance2'),
+                TextInput::make('mediciad'),
+                TextInput::make('policy_type'),
+                TextInput::make('insurance_relationship'),
+                TextInput::make('drug_plan1'),
+                TextInput::make('drug_plan2'),
+                TextInput::make('completed_1823_file'),
+                DatePicker::make('completed_1823_date'),
+                TextInput::make('dnr_file'),
+                TextInput::make('dialysis_patient'),
+                TextInput::make('dialysis_center'),
+                TextInput::make('dialysis_center_phone'),
+                TextInput::make('under_hospice_care'),
+                TextInput::make('hospice_Provider'),
+                TextInput::make('hospice_provider_phone'),
+                TextInput::make('allergies'),
+                TextInput::make('medical_notes'),
+                TextInput::make('medical_physician_name'),
+                TextInput::make('medical_physician_phone'),
+                TextInput::make('medical_physician_address'),
+                TextInput::make('medical_physician_email'),
+                TextInput::make('psychiatric_physician_name'),
+                TextInput::make('psychiatric_physician_phone'),
+                TextInput::make('psychiatric_physician_address'),
+                TextInput::make('psychiatric_physician_mail'),
+                TextInput::make('signed_contract_file'),
+                TextInput::make('contract_amount'),
+                TextInput::make('durable_power'),
+                TextInput::make('clear_health_alliance'),
+                TextInput::make('long_care_provider'),
+                TextInput::make('long_care_number'),
+                TextInput::make('case_worker_last_name'),
+                TextInput::make('case_worker_first_name'),
+                TextInput::make('case_worker_phone'),
+                TextInput::make('assistive_care_service'),
+                TextInput::make('oss'),
+                TextInput::make('mma_plan'),
+                TextInput::make('mma'),
+                TextInput::make('financial_notes'),
+                TextInput::make('admitted_form'),
+                DatePicker::make('date_of_discharge'),
+                TextInput::make('discharged_to'),
+                TextInput::make('discharge_reason'),
+                TextInput::make('discharge_notes'),
+                DatePicker::make('date_out'),
+                DatePicker::make('date_in'),
+                TextInput::make('sent_to'),
+                Textarea::make('bed_notes'),
             ])
             ->filters([
                 //
