@@ -31,48 +31,50 @@ class ResidentResource extends Resource
         return $form
             ->schema([
                 //
-                Section::make()
-                ->schema ([
-                DatePicker::make('date_of_admission')->required(),
-                TextInput::make('first_name')->required(),
-                TextInput::make('last_name')->required(),
-                FileUpload::make('picture')
-                ->image()
-                ->required(),
-                DatePicker::make('dob')->required(),
-                TextInput::make('social_security')->required(),
-                Select::make('gender')
-                ->options([
-                    'male' => 'Male',
-                    'female' => 'Female',
-                ])
-                ->required(),
-                TextInput::make('room_number')->required(),
-                TextInput::make('bed')->required(),
-                TextInput::make('race')->required(),
-                Select::make('marital_status')
-                ->options([
-                    'married' => 'Married',
-                    'unmarried' => 'Unmarried',
-                    'widow' => 'Widow', 
-                ])
-                ->required(),
-                TextInput::make('religion')->required(),
-                Textarea::make('notes')->required(),
-            ])
-            ->label("ADD RESIDENT"),
-                TextInput::make('primary_name')->required(),
-                TextInput::make('primary_relationship')->required(),
-                TextInput::make('primary_phone')->required(),
-                TextInput::make('primary_mobile')->required(),
-                TextInput::make('primary_mail')->required(),
-                TextInput::make('primary_address')->required(),
-                TextInput::make('secondary_name')->required(),
-                TextInput::make('secondary_relationship')->required(),
-                TextInput::make('secondary_phone')->required(),
-                TextInput::make('secondary_mobile')->required(),
-                TextInput::make('secondary_mail')->required(),
-                TextInput::make('secondary_address')->required(),
+                Section::make('ADD RESIDENT')
+                    ->schema ([
+                        DatePicker::make('date_of_admission')->required(),
+                        TextInput::make('first_name')->required(),
+                        TextInput::make('last_name')->required(),
+                        FileUpload::make('picture')
+                        ->image()
+                        ->required(),
+                        DatePicker::make('dob')->required(),
+                        TextInput::make('social_security')->required(),
+                        Select::make('gender')
+                        ->options([
+                            'male' => 'Male',
+                            'female' => 'Female',
+                        ])
+                        ->required(),
+                        TextInput::make('room_number')->required(),
+                        TextInput::make('bed')->required(),
+                        TextInput::make('race')->required(),
+                        Select::make('marital_status')
+                        ->options([
+                            'married' => 'Married',
+                            'unmarried' => 'Unmarried',
+                            'widow' => 'Widow', 
+                        ])
+                        ->required(),
+                        TextInput::make('religion')->required(),
+                        Textarea::make('notes')->required(),
+                    ]),
+                Section::make('EMERGENCY CONTACTS')
+                    ->schema ([
+                        TextInput::make('primary_name')->required(),
+                        TextInput::make('primary_relationship')->required(),
+                        TextInput::make('primary_phone')->required(),
+                        TextInput::make('primary_mobile')->required(),
+                        TextInput::make('primary_mail')->required(),
+                        TextInput::make('primary_address')->required(),
+                        TextInput::make('secondary_name')->required(),
+                        TextInput::make('secondary_relationship')->required(),
+                        TextInput::make('secondary_phone')->required(),
+                        TextInput::make('secondary_mobile')->required(),
+                        TextInput::make('secondary_mail')->required(),
+                        TextInput::make('secondary_address')->required(),
+                ]),
                 TextInput::make('insurance1')->required(),
                 TextInput::make('insurance2')->required(),
                 TextInput::make('mediciad')->required(),
