@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ResidentResource\Pages;
 use App\Filament\Resources\ResidentResource\RelationManagers;
-use App\Models\Resident;
+use App\Models\resident;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -25,7 +25,7 @@ class ResidentResource extends Resource
         return $form
             ->schema([
                 //
-                Forms\Components\TextInput::make('date_of_admission')->required(),
+                TextInput::make('date_of_admission')->required(),
             ]);
     }
 
