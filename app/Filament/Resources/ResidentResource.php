@@ -26,7 +26,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
-use App\Filament\Resources\Filter;
+use Filament\Tables\Filters\Filter;
 
 class ResidentResource extends Resource
 {
