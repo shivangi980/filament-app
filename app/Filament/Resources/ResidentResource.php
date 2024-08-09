@@ -13,6 +13,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -342,7 +343,7 @@ class ResidentResource extends Resource
                         ->label('Discharge Notes')
                         ->required(),
                     ]),
-                    Section::make('BED HOLDS')
+                    Repeater::make('BED HOLDS')
                     ->schema([
                         DatePicker::make('date_out')
                         ->label('Date out')
@@ -356,7 +357,10 @@ class ResidentResource extends Resource
                         Textarea::make('bed_notes')
                         ->label('Notes')
                         ->required(),
-                    ]),
+                    ])
+                    ->columns(2) // Adjust the number of columns as needed
+                    ->createItemButtonLabel('Add More')
+                    ->defaultItems(1),
                     
                     // Include your custom Blade view with the script
                     Forms\Components\View::make('components.input-mask'),
