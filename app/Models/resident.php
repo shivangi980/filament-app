@@ -87,6 +87,13 @@ class resident extends Model
         'bed_notes',
     ];
 
+    protected $casts = [
+        'date_out' => 'array', 
+        'date_in' => 'array',
+        'sent_to' => 'array',
+        'bed_notes' => 'array',
+    ];
+
     public function getPictureUrlAttribute()
     {
         return $this->picture ? Storage::url($this->picture) : null;
