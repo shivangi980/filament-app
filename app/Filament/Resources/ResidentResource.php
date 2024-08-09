@@ -358,7 +358,7 @@ class ResidentResource extends Resource
                         ->label('Notes')
                         ->required(),
                     ])
-                    ->columns(2) // Adjust the number of columns as needed
+                    ->columns(1) // Adjust the number of columns as needed
                     ->createItemButtonLabel('Add More')
                     ->defaultItems(1),
                     
