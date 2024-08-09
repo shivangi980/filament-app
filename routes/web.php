@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/print-residents', function () {
         $residents = resident::all(); 
-        return view('filament_Files.print-residents', compact('residents'));
+        return view('Filament_Files.print-residents', compact('residents'));
     })->name('print-residents');
 });
 
