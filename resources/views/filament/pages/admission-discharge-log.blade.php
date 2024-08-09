@@ -1,6 +1,10 @@
 <x-filament::page>
     <h2>Admission/Discharge Log</h2>
-    
+    <div class="mb-4">
+        <a href="{{ route('print-residents') }}" target="_blank" class="btn btn-primary">
+            Print List
+        </a>
+    </div>
     <div class="overflow-x-auto">
         <table class="table-auto w-full">
             <thead>
