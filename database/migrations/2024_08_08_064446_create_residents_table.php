@@ -85,9 +85,9 @@ return new class extends Migration
             $table->string('discharge_reason')->nullable();
             $table->text('discharge_notes')->nullable();
             $table->json('date_out')->nullable();
-            $table->date('date_in')->nullable();
-            $table->string('sent_to')->nullable();
-            $table->text('bed_notes')->nullable();
+            $table->json('date_in')->nullable();
+            $table->json('sent_to')->nullable();
+            $table->json('bed_notes')->nullable();
             $table->timestamps();
         });
     }
