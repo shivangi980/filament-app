@@ -471,7 +471,7 @@ class ResidentResource extends Resource
                 Action::make('printList')
                 ->label('Print List')
                 ->icon('heroicon-o-printer')
-                ->url(route('print-residents')) // Link to the print route
+                // ->url(route('print-residents')) // Link to the print route
                 ->openUrlInNewTab(), // Opens the print view in a new tab
         ])
             ->bulkActions([
