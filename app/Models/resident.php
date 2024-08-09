@@ -17,6 +17,7 @@ class resident extends Model
         'dob',
         'social_security',
         'gender',
+        'isactive',
         'room_number',
         'bed',
         'race',

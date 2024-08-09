@@ -71,6 +71,7 @@ class ResidentResource extends Resource
                             'Other' => 'Other',
                         ])
                         ->required(),
+                        Checkbox::make('isactive')->required(),
                         TextInput::make('room_number')->required(),
                         TextInput::make('bed')->required(),
                         Select::make('race')

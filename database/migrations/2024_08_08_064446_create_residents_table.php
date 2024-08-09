@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('dob');
             $table->string('social_security');
             $table->string('gender');
+            $table->string('isactive');
             $table->string('room_number');
             $table->string('bed');
             $table->string('race');
