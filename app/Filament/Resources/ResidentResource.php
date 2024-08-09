@@ -26,6 +26,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
+use Filament\Resources\Components\Tab;
 
 class ResidentResource extends Resource
 {
@@ -473,4 +474,16 @@ class ResidentResource extends Resource
             'edit' => Pages\EditResident::route('/{record}/edit'),
         ];
     }
+
+    public function getTabs(): array
+    {
+        return [
+            'all' => Tab::make('All customers'),
+            'active' => Tab::make('Active customers')
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('active', true)),
+            'inactive' => Tab::make('Inactive customers')
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('active', false)),
+        ];
+    }
+
 }
