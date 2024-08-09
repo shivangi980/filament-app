@@ -371,15 +371,21 @@ class ResidentResource extends Resource
                     ->disk('public') // Ensure the correct disk
                     ->size(150),
                 // TextColumn::make('date_of_admission'),
-                TextColumn::make('first_name'),
-                TextColumn::make('last_name'),
+                TextColumn::make('first_name')
+                ->searchable(),
+                TextColumn::make('last_name')
+                ->searchable(),
                 // TextColumn::make('dob'),
                 // TextColumn::make('social_security'),
                 // TextColumn::make('gender'),
-                TextColumn::make('exam_status'),
-                TextColumn::make('request_exam'),
-                TextColumn::make('room_number'),
-                TextColumn::make('bed'),
+                TextColumn::make('exam_status')
+                ->searchable(),
+                TextColumn::make('request_exam')
+                ->searchable(),
+                TextColumn::make('room_number')
+                ->searchable(),
+                TextColumn::make('bed')
+                ->searchable(),
                 // TextColumn::make('race'),
                 // TextColumn::make('marital_status'),
                 // TextColumn::make('religion'),
