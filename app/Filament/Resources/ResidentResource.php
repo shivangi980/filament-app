@@ -33,6 +33,13 @@ class ResidentResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    // Set a custom navigation group or label
+    protected static ?string $navigationGroup = 'Admission/Discharge Log';
+    protected static ?string $navigationLabel = 'Resident List';
+
+    // protected static ?string $navigationIcon = 'heroicon-o-user-group'; // Optional, to set an icon
+
+
     public static function form(Form $form): Form
     {
         return $form
