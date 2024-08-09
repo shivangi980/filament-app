@@ -26,6 +26,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
+use App\Filament\Resources\Filter;
 
 class ResidentResource extends Resource
 {
@@ -450,13 +451,13 @@ class ResidentResource extends Resource
                 ->query(fn ($query) => $query)
                 ->label('All Residents'),
 
-            Filter::make('active')
-                ->query(fn ($query) => $query->where('status', 'active'))
-                ->label('Active'),
+                Filter::make('active')
+                    ->query(fn ($query) => $query->where('status', 'active'))
+                    ->label('Active'),
 
-            Filter::make('inactive')
-                ->query(fn ($query) => $query->where('status', 'inactive'))
-                ->label('Discharged'),
+                Filter::make('inactive')
+                    ->query(fn ($query) => $query->where('status', 'inactive'))
+                    ->label('Discharged'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
