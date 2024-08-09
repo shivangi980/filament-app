@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
 use Filament\Tables\Filters\Filter;
+use Filament\Tables\Actions\Action;
 
 class ResidentResource extends Resource
 {
@@ -467,7 +468,12 @@ class ResidentResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-            ])
+                Action::make('printList')
+                ->label('Print List')
+                ->icon('heroicon-o-printer')
+                ->url(route('print-residents')) // Link to the print route
+                ->openUrlInNewTab(), // Opens the print view in a new tab
+        ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
