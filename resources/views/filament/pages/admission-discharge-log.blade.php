@@ -16,7 +16,7 @@
                     <th class="px-4 py-2">Discharge Reason</th>
                     <th class="px-4 py-2">Discharge Notes</th>
                     <th class="px-4 py-2">Discharged To</th>
-                    <th class="px-4 py-2">Actions</th>
+                    <!-- <th class="px-4 py-2">Actions</th> -->
                 </tr>
             </thead>
             <tbody>
