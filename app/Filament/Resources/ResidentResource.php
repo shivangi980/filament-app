@@ -466,14 +466,16 @@ class ResidentResource extends Resource
                     ->query(fn ($query) => $query->where('status', 'inactive'))
                     ->label('Discharged'),
             ])
+            ->headerActions([
+                Action::make('printAll')
+                    ->label('Print All Residents')
+                    ->icon('heroicon-o-printer')
+                    ->url(route('print-all-residents')) // Link to the print-all-residents route
+                    ->openUrlInNewTab(), // Opens the print view in a new tab
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Action::make('printList')
-                ->label('Print List')
-                ->icon('heroicon-o-printer')
-                // ->url(route('print-residents')) // Link to the print route
-                ->openUrlInNewTab(), // Opens the print view in a new tab
-        ])
+             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
