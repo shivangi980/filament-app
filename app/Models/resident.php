@@ -81,10 +81,10 @@ class resident extends Model
         'discharged_to',
         'discharge_reason',
         'discharge_notes',
-        'date_out',
-        'date_in',
-        'sent_to',
-        'bed_notes',
+        // 'date_out',
+        // 'date_in',
+        // 'sent_to',
+        // 'bed_notes',
     ];
 
     protected $casts = [
