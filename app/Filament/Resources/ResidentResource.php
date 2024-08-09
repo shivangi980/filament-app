@@ -470,7 +470,7 @@ class ResidentResource extends Resource
                 Action::make('printAll')
                     ->label('Print All Residents')
                     ->icon('heroicon-o-printer')
-                    ->url(route('print-all-residents')) // Link to the print-all-residents route
+                    // ->url(route('print-all-residents')) // Link to the print-all-residents route
                     ->openUrlInNewTab(), // Opens the print view in a new tab
             ])
             ->actions([
