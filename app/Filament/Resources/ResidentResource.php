@@ -483,18 +483,18 @@ class ResidentResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 // Add the default save button
-                Action::make('save')
-                ->label('Save')
-                ->action(function ($data) {
-                    $this->save($data, 'published');
-                }),
+                // Action::make('save')
+                // ->label('Save')
+                // ->action(function ($data) {
+                //     $this->save($data, 'published');
+                // }),
             
-                Action::make('saveAsDraft')
-                ->label('Save as Draft')
-                ->color('secondary')
-                ->action(function ($data) {
-                    $this->save($data, 'draft');
-                }),
+                // Action::make('saveAsDraft')
+                // ->label('Save as Draft')
+                // ->color('secondary')
+                // ->action(function ($data) {
+                //     $this->save($data, 'draft');
+                // }),
             ]);
     }
 
@@ -514,14 +514,14 @@ class ResidentResource extends Resource
         ];
     }
 
-    protected function save(array $data, string $status)
-    {
-        $data['status'] = $status;
+    // protected function save(array $data, string $status)
+    // {
+    //     $data['status'] = $status;
     
-        $resident = $this->model::create($data);
+    //     $resident = $this->model::create($data);
     
-        $this->notify('success', 'Resident ' . ($status === 'draft' ? 'saved as draft' : 'saved successfully'));
-    }
+    //     $this->notify('success', 'Resident ' . ($status === 'draft' ? 'saved as draft' : 'saved successfully'));
+    // }
     
 
     
