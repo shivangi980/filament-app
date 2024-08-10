@@ -482,11 +482,11 @@ class ResidentResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 // Add the default save button
-            ButtonAction::make('Save')
+            Button::make('Save')
             ->action('save'),
 
         // Add a "Save as Draft" button
-        ButtonAction::make('Save as Draft')
+        Button::make('Save as Draft')
             ->action('saveAsDraft')
             ->color('secondary'),
              ])
