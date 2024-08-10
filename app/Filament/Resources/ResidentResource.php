@@ -393,6 +393,7 @@ class ResidentResource extends Resource
                 ->searchable(),
                 TextColumn::make('bed')
                 ->searchable(),
+                TextColumn::make('status'),
                 // TextColumn::make('race'),
                 // TextColumn::make('marital_status'),
                 // TextColumn::make('religion'),
