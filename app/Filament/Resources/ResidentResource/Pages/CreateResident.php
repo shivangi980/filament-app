@@ -29,7 +29,13 @@ class CreateResident extends CreateRecord
 
     protected function saveAs(string $status)
     {
-        $this->form->state['status'] = $status;
-        $this->save();
+        $this->data['status'] = $status;
+        $this->createRecord();
+    }
+
+    protected function handleRecordCreation(array $data): mixed
+    {
+        // Modify the $data array before saving if necessary
+        return $this->getModel()::create($data);
     }
 }
