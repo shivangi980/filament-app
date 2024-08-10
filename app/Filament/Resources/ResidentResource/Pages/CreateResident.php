@@ -22,7 +22,7 @@ class CreateResident extends CreateRecord
             Action::make('saveAsDraft')
                 ->label('Save as Draft')
                 ->action(fn () => $this->saveAs('draft'))
-                ->color('secondary')
+                ->color('primary')
                 ->keyBindings(['mod+d']), // Optional: Adds a keyboard shortcut
         ];
     }
