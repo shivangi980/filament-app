@@ -85,6 +85,7 @@ class resident extends Model
         // 'date_in',
         // 'sent_to',
         // 'bed_notes',
+        'status',
     ];
 
     protected $casts = [

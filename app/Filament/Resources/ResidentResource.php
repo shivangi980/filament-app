@@ -19,6 +19,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Pages\Actions\ButtonAction;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
@@ -480,6 +481,14 @@ class ResidentResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                // Add the default save button
+            ButtonAction::make('Save')
+            ->action('save'),
+
+        // Add a "Save as Draft" button
+        ButtonAction::make('Save as Draft')
+            ->action('saveAsDraft')
+            ->color('secondary'),
              ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -503,5 +512,36 @@ class ResidentResource extends Resource
             'edit' => Pages\EditResident::route('/{record}/edit'),
         ];
     }
+
+    public function save()
+{
+    $this->form->validate();
+
+    $resident = $this->form->getState();
+
+    // Set status as published before saving
+    $resident['status'] = 'published';
+
+    $this->model::create($resident);
+
+    // Provide feedback
+    $this->notify('success', 'Resident saved successfully');
+}
+
+public function saveAsDraft()
+{
+    $this->form->validate();
+
+    $resident = $this->form->getState();
+
+    // Set status as draft before saving
+    $resident['status'] = 'draft';
+
+    $this->model::create($resident);
+
+    // Provide feedback
+    $this->notify('success', 'Resident saved as draft');
+}
+
     
 }

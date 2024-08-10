@@ -88,6 +88,7 @@ return new class extends Migration
             $table->json('date_in')->nullable();
             $table->json('sent_to')->nullable();
             $table->json('bed_notes')->nullable();
+            $table->string('status')->default('draft');
             $table->timestamps();
         });
     }
