@@ -6,6 +6,7 @@ use App\Filament\Resources\ResidentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Filament\Actions\Action;
+use Illuminate\Database\Eloquent\Model;
 
 class CreateResident extends CreateRecord
 {
@@ -29,13 +30,19 @@ class CreateResident extends CreateRecord
 
     protected function saveAs(string $status)
     {
-        $this->data['status'] = $status;
+        // Set the status in the form state
+        $this->form->fill([
+            'status' => $status,
+        ]);
+
+        // Save the record
         $this->createRecord();
     }
 
-    protected function handleRecordCreation(array $data): mixed
+    protected function handleRecordCreation(array $data): Model
     {
-        // Modify the $data array before saving if necessary
+        // Create and return the new record
         return $this->getModel()::create($data);
     }
+    
 }
