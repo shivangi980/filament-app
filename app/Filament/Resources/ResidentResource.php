@@ -482,18 +482,18 @@ class ResidentResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 // Add the default save button
-            Button::make('Save')
-            ->action('save'),
-
-        // Add a "Save as Draft" button
-        Button::make('Save as Draft')
-            ->action('saveAsDraft')
-            ->color('secondary'),
-             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Action::make('save')
+                ->label('Save')
+                ->action(function ($data) {
+                    $this->save($data, 'published');
+                }),
+            
+                Action::make('saveAsDraft')
+                ->label('Save as Draft')
+                ->color('secondary')
+                ->action(function ($data) {
+                    $this->save($data, 'draft');
+                }),
             ]);
     }
 
@@ -513,35 +513,15 @@ class ResidentResource extends Resource
         ];
     }
 
-    public function save()
-{
-    $this->form->validate();
-
-    $resident = $this->form->getState();
-
-    // Set status as published before saving
-    $resident['status'] = 'published';
-
-    $this->model::create($resident);
-
-    // Provide feedback
-    $this->notify('success', 'Resident saved successfully');
-}
-
-public function saveAsDraft()
-{
-    $this->form->validate();
-
-    $resident = $this->form->getState();
-
-    // Set status as draft before saving
-    $resident['status'] = 'draft';
-
-    $this->model::create($resident);
-
-    // Provide feedback
-    $this->notify('success', 'Resident saved as draft');
-}
+    protected function save(array $data, string $status)
+    {
+        $data['status'] = $status;
+    
+        $resident = $this->model::create($data);
+    
+        $this->notify('success', 'Resident ' . ($status === 'draft' ? 'saved as draft' : 'saved successfully'));
+    }
+    
 
     
 }
