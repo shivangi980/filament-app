@@ -2,7 +2,7 @@
     <h2>Admission/Discharge Log</h2>
     <div class="mb-4">
         <a href="{{ route('print-residents') }}" target="_blank" class="btn btn-primary">
-            <button>Print List</button>
+            <button style="border:1px solid rgb(217 119 6); background-color:rgb(217 119 6); border-radius:3px; padding:5px;">Print List</button>
         </a>
     </div>
     <div class="overflow-x-auto">
