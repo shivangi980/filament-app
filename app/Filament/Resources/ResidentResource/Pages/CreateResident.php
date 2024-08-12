@@ -14,37 +14,37 @@ class CreateResident extends CreateRecord
 {
     protected static string $resource = ResidentResource::class;
 
-    public function getFormActions(): array
-    {
-        return [
-            Action::make('save')
-                ->label('Save')
-                ->action(fn () => $this->saveAs('published'))
-                ->keyBindings(['mod+s']), // Optional: Adds a keyboard shortcut
+    // public function getFormActions(): array
+    // {
+    //     return [
+    //         Action::make('save')
+    //             ->label('Save')
+    //             ->action(fn () => $this->saveAs('published'))
+    //             ->keyBindings(['mod+s']), // Optional: Adds a keyboard shortcut
             
-            Action::make('saveAsDraft')
-                ->label('Save as Draft')
-                ->action(fn () => $this->saveAs('draft'))
-                ->color('primary')
-                ->keyBindings(['mod+d']), // Optional: Adds a keyboard shortcut
-        ];
-    }
+    //         Action::make('saveAsDraft')
+    //             ->label('Save as Draft')
+    //             ->action(fn () => $this->saveAs('draft'))
+    //             ->color('primary')
+    //             ->keyBindings(['mod+d']), // Optional: Adds a keyboard shortcut
+    //     ];
+    // }
 
-    protected function saveAs(string $status)
-    {
-        // Set the status in the form state
-        $this->form->fill([
-            'status' => $status,
-        ]);
+    // protected function saveAs(string $status)
+    // {
+    //     // Set the status in the form state
+    //     $this->form->fill([
+    //         'status' => $status,
+    //     ]);
 
-        // Save the record
-        // $this->createRecord();
-    }
+    //     // Save the record
+    //     // $this->createRecord();
+    // }
 
-    protected function handleRecordCreation(array $data): Model
-    {
-        // Create and return the new record
-        return $this->getModel()::create($data);
-    }
+    // protected function handleRecordCreation(array $data): Model
+    // {
+    //     // Create and return the new record
+    //     return $this->getModel()::create($data);
+    // }
 
 }
