@@ -19,6 +19,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages\Actions\ButtonAction;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -36,12 +37,11 @@ class ResidentResource extends Resource
     protected static ?string $model = Resident::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    
-    public static function navigationLabel(): ?string
+    public static function configureNavigation(NavigationItem $item): void
     {
-        return 'Residents';  // Customize the label as needed
+        $item->label('Residents') // Set the label
+             ->icon('heroicon-o-users'); // Optionally set the icon
     }
-
     public static function form(Form $form): Form
     {
         return $form
