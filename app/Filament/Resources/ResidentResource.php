@@ -37,6 +37,10 @@ class ResidentResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     
+    public static function navigationLabel(): ?string
+    {
+        return 'Residents';  // Customize the label as needed
+    }
 
     public static function form(Form $form): Form
     {
