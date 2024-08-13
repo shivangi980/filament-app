@@ -37,11 +37,7 @@ class ResidentResource extends Resource
     protected static ?string $model = Resident::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    public static function configureNavigation(NavigationItem $item): void
-    {
-        $item->label('Residents') // Set the label
-             ->icon('heroicon-o-users'); // Optionally set the icon
-    }
+    
     public static function form(Form $form): Form
     {
         return $form
